@@ -1,6 +1,7 @@
 <h1><%= @board.name %></h1>
 
-<hr>
+<%= link_to '編集します', edit_board_path(@board) %>
+
 <hr>
 
 <%= link_to '一覧ページに戻るよ！', boards_path() %>
