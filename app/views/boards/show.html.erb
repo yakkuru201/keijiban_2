@@ -12,6 +12,8 @@
   <%= c.content %>
   <br>
   <%= c.created_at.strftime("%Y/%M/%D") %>
+  <br>
+  <%= link_to '削除するぜ', board_comment_path(@board, c), method: :delete, confirm: '削除するよ？' %>
   </p>
 <% end %>
 
