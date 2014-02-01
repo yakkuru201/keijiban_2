@@ -6,4 +6,12 @@
 
 <hr>
 
+<h1>new comment</h1>
+<%= form_for [@board, @board.comments.build] do |f| %>
+  <%= f.text_area :content %>
+  <%= f.submit %>
+<% end %>
+
+<hr>
+
 <%= link_to '一覧ページに戻るよ！', boards_path() %>
