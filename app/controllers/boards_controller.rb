@@ -26,7 +26,7 @@ class BoardsController < ApplicationController
 
   def update
     @board = Board.find(params[:id])
-    if @board.update_attributes params_board2
+    if @board.update_attributes params_board
       redirect_to board_path(@board)
     else
       render :edit
@@ -39,11 +39,9 @@ class BoardsController < ApplicationController
     redirect_to boards_path
   end
 
-  def params_board
-    params.require(:board).permit(:name)
-  end
+  private
 
-  def params_board2
+  def params_board
     params.require(:board).permit(:name)
   end
 end
