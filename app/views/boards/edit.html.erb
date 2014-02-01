@@ -1,3 +1,11 @@
+<% if @board.errors.any? %>
+  <h2>エラーが発生したよ。</h2>
+  <% @board.errors.full_messages.each do |f| %>
+    <%= f %>
+  <% end %>
+<% end %>
+
+
 <%= form_for @board do |f| %>
   <%= f.text_field :name %>
   <%= f.submit %>
