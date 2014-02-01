@@ -13,6 +13,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @board = Board.find(params[:board_id])
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to board_path(@board)
   end
 
   private
