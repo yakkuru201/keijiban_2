@@ -1,11 +1,5 @@
 Keijiban2::Application.routes.draw do
-  get "boards/index"
-  get "boards/new"
-  get "boards/create"
-  get "boards/show"
-  get "boards/edit"
-  get "boards/update"
-  get "boards/destroy"
+  resources :boards
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
