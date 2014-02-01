@@ -12,6 +12,10 @@ class CommentsController < ApplicationController
   end
 
   def update
+    @board = Board.find(params[:board_id])
+    @comment = Comment.find(params[:id])
+    @comment.update_attributes params_comment
+    redirect_to board_path(@board)
   end
 
   def destroy
