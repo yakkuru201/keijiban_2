@@ -22,12 +22,19 @@ class BoardsController < ApplicationController
   end
 
   def update
+    @board = Board.find(params[:id])
+    @board.update_attributes params_board2
+    redirect_to board_path(@board)
   end
 
   def destroy
   end
 
   def params_board
+    params.require(:board).permit(:name)
+  end
+
+  def params_board2
     params.require(:board).permit(:name)
   end
 end
