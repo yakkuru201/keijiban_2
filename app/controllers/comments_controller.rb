@@ -7,6 +7,8 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @board = Board.find(params[:board_id])
+    @comment = Comment.find(params[:id])
   end
 
   def update
