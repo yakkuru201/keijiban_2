@@ -9,8 +9,11 @@ class BoardsController < ApplicationController
 
   def create
     @board = Board.new params_board
-    @board.save
-    redirect_to board_path(@board)
+    if @board.save
+      redirect_to board_path(@board)
+    else
+      render :new
+    end
   end
 
   def show
