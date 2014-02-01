@@ -1,6 +1,8 @@
 <h1><%= @board.name %></h1>
 
 <%= link_to '編集します', edit_board_path(@board) %>
+<br>
+<%= link_to '消去します', board_path(@board), method: :delete, confirm: 'このboardを消去します' %>
 
 <hr>
 
