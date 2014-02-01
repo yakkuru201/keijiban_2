@@ -2,6 +2,9 @@ Keijiban2::Application.routes.draw do
   resources :boards do
     resources :comments, except: [:index, :new, :show]
   end
+
+  root to: 'boards#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
