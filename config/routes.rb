@@ -1,9 +1,7 @@
 Keijiban2::Application.routes.draw do
-  get "comments/create"
-  get "comments/edit"
-  get "comments/update"
-  get "comments/destroy"
-  resources :boards
+  resources :boards do
+    resources :comments
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
