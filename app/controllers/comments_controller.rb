@@ -2,8 +2,11 @@ class CommentsController < ApplicationController
   def create
     @board = Board.find(params[:board_id])
     @comment = @board.comments.build params_comment
-    @comment.save
-    redirect_to board_path(@board)
+    if @comment.save
+      redirect_to board_path(@board)
+    else
+      render :edit
+    end
   end
 
   def edit
