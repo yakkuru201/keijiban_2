@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140201045520) do
+ActiveRecord::Schema.define(version: 20140201083736) do
 
   create_table "boards", force: true do |t|
-    t.string   "name"
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", force: true do |t|
+    t.text     "content",    null: false
+    t.integer  "board_id",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
